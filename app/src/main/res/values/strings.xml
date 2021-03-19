@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Day Tracker</string>
+    <string name="button_add_day">Add Day</string>
+    <string name="text_how_was_your_day">How was your day?</string>
+
+    <string name="title"><![CDATA[<h3>HERE IS YOUR DAY QUALITY DATA</h3>]]></string>
+    <string name="day"><![CDATA[<b>Day:</b>]]></string>
+    <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
+    <string name="button_delete_all">Delete All</string>
+</resources>

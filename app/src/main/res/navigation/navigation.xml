@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/day_tracking_destination">
+
+    <fragment
+        android:id="@+id/day_tracking_destination"
+        android:name="com.example.daytracker.ui.main.dayTracking.DayTrackingFragment"
+        android:label="day_tracking_fragment"
+        tools:layout="@layout/day_tracking_fragment">
+        <action
+            android:id="@+id/action_dayTracking_to_dayQuality"
+            app:destination="@id/day_quality_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/day_quality_destination"
+        android:name="com.example.daytracker.ui.main.dayQuality.DayQualityFragment"
+        android:label="day_quality_fragment"
+        tools:layout="@layout/day_quality_fragment">
+        <action
+            android:id="@+id/action_dayQuality_to_dayTracking"
+            app:destination="@id/day_tracking_destination" />
+    </fragment>
+
+</navigation>

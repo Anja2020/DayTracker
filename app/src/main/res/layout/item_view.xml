@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.daytracker.ui.main.dayTracking.DayTrackingViewModel" />
+
+        <variable
+            name="clickListener"
+            type="com.example.daytracker.ui.main.dayTracking.DayQualityListener" />
+
+        <variable
+            name="day"
+            type="com.example.daytracker.ui.main.database.DayQuality" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="TODO" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toLeftOf="@id/delete_image"
+            android:layout_toRightOf="@id/icon"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textView_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_day"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/delete_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="TODO"
+            android:onClick="@{() -> clickListener.onClick(day)}"
+            app:srcCompat="@drawable/icon_delete" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dayTrackingViewModel"
+            type="com.example.daytracker.ui.main.dayTracking.DayTrackingViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             app:layout_constraintBottom_toTopOf="@id/button_add_day"
+             app:layout_constraintEnd_toStartOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="16dp"
+                app:layoutManager="LinearLayoutManager" />
+
+         </ScrollView>
+
+        <Button
+            android:id="@+id/button_add_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{ () -> dayTrackingViewModel.onAddDay() }"
+            android:text="@string/button_add_day"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_delete_all"
+            android:enabled="@{dayTrackingViewModel.addButtonVisible}"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_delete_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{ () -> dayTrackingViewModel.onDeleteAll() }"
+            android:text="@string/button_delete_all"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:enabled="@{dayTrackingViewModel.deleteButtonVisible}"
+            app:layout_constraintStart_toEndOf="@id/button_add_day" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
